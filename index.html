@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>臥室風水指南｜隨緣堂</title>
+  <meta name="description" content="隨緣堂臥室風水指南，整理床位、鏡子、樑柱、色彩、收納與採光等重點，幫助打造安穩、聚氣、好睡的臥室空間。" />
+  <style>
+    :root {
+      --bg: #f6f1e8;
+      --bg-soft: #fffaf3;
+      --card: #ffffff;
+      --text: #2c241c;
+      --muted: #6c5d4d;
+      --primary: #8b5e34;
+      --primary-dark: #684422;
+      --accent: #c8a97e;
+      --line: #e6d8c7;
+      --good: #496a4d;
+      --warn: #a55b2a;
+      --shadow: 0 12px 30px rgba(87, 60, 32, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #f8f4ed 0%, #f4ede3 100%);
+      line-height: 1.75;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top right, rgba(200, 169, 126, 0.18), transparent 30%),
+        linear-gradient(135deg, #fff8ef 0%, #f3e7d4 100%);
+      border-bottom: 1px solid rgba(139, 94, 52, 0.12);
+    }
+
+    .hero-inner {
+      min-height: 78vh;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 36px;
+      align-items: center;
+      padding: 72px 0 56px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(139, 94, 52, 0.1);
+      color: var(--primary-dark);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(34px, 5vw, 60px);
+      line-height: 1.15;
+      margin: 0 0 18px;
+      letter-spacing: 0.02em;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--muted);
+      margin: 0 0 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 22px;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: .2s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover { background: var(--primary-dark); }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.72);
+      border-color: var(--line);
+      color: var(--primary-dark);
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(139, 94, 52, 0.14);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .hero-list {
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .hero-list li {
+      background: var(--bg-soft);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+
+    section {
+      padding: 78px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 18px;
+      font-size: clamp(28px, 4vw, 42px);
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0 auto 42px;
+    }
+
+    .grid-3, .grid-2 {
+      display: grid;
+      gap: 22px;
+    }
+
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .card p { color: var(--muted); margin-bottom: 0; }
+
+    .tips {
+      background: linear-gradient(180deg, rgba(255,255,255,0.55), rgba(255,255,255,0.88));
+      border-top: 1px solid rgba(139, 94, 52, 0.1);
+      border-bottom: 1px solid rgba(139, 94, 52, 0.1);
+    }
+
+    .tip-card {
+      position: relative;
+      padding-top: 60px;
+    }
+
+    .tip-number {
+      position: absolute;
+      top: 22px;
+      left: 24px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .compare-box {
+      border-radius: 24px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .good-box {
+      background: #f4faf3;
+      border: 1px solid #cfe3cf;
+    }
+
+    .bad-box {
+      background: #fff6f1;
+      border: 1px solid #efd3c2;
+    }
+
+    .compare-box h3 {
+      margin-top: 0;
+      font-size: 24px;
+    }
+
+    .compare-box ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .cta {
+      text-align: center;
+      background: linear-gradient(135deg, #7c5330 0%, #aa7b4e 100%);
+      color: #fff;
+      border-radius: 28px;
+      padding: 46px 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .cta p {
+      color: rgba(255,255,255,0.85);
+      max-width: 700px;
+      margin: 14px auto 0;
+    }
+
+    footer {
+      padding: 28px 0 42px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .mini-note {
+      margin-top: 20px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner,
+      .grid-3,
+      .grid-2,
+      .compare {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-inner {
+        min-height: auto;
+        padding: 56px 0 44px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container hero-inner">
+      <div>
+        <div class="badge">隨緣堂｜臥室風水主題站</div>
+        <h1>臥室風水要對，<br>睡得穩，氣才順。</h1>
+        <p>
+          臥室不是只有拿來睡覺，還關係到休息品質、情緒穩定、夫妻關係與整體運勢。
+          這一頁幫你一次整理床位、鏡面、採光、樑壓、收納與色彩配置重點。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#tips">看重點布局</a>
+          <a class="btn btn-secondary" href="#mistakes">看常見禁忌</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>快速判斷 3 大核心</h3>
+        <ul class="hero-list">
+          <li><strong>床位要穩：</strong>有靠、避沖、避壓，先顧睡眠再談運勢。</li>
+          <li><strong>氣場要靜：</strong>臥室忌雜亂、忌過亮、忌鏡煞直照。</li>
+          <li><strong>色調要柔：</strong>柔和溫潤比花俏刺激更適合休息聚氣。</li>
+        </ul>
+        <div class="mini-note">一句話：臥室要像養氣的地方，不要像戰場。每天睡在煞位上，運自然不會太乖。</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="container">
+        <h2 class="section-title">為什麼臥室風水很重要？</h2>
+        <p class="section-subtitle">
+          人一天至少有三分之一時間在臥室，這個空間若氣場不穩，容易影響睡眠、情緒、精神與人際互動。
+          臥室風水做得好，不一定讓你一夜暴富，但至少比較不會每天起床都像被生活追殺。
+        </p>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>睡眠品質</h3>
+            <p>床位正確、光線柔和、空氣流通，能讓身體真正放鬆，減少淺眠、多夢與壓迫感。</p>
+          </article>
+          <article class="card">
+            <h3>情緒穩定</h3>
+            <p>臥室過亂、過亮、過多雜物，容易讓心神浮動。空間安定，人才比較不容易煩躁。</p>
+          </article>
+          <article class="card">
+            <h3>關係與聚氣</h3>
+            <p>臥室關乎私密與休養，佈局得當能提升互動品質，也能避免長期處在散氣、沖煞的環境。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="tips" class="tips">
+      <div class="container">
+        <h2 class="section-title">臥室風水 6 大布局重點</h2>
+        <p class="section-subtitle">先把基礎骨架顧好，再談細節加分。風水不是玄，很多時候就是空間邏輯加上氣場秩序。</p>
+
+        <div class="grid-3">
+          <article class="card tip-card">
+            <div class="tip-number">1</div>
+            <h3>床頭一定要有靠</h3>
+            <p>床頭最好靠實牆，象徵有靠山、睡得安穩。避免床頭懸空、靠窗或後方空蕩，容易讓人心神不定。</p>
+          </article>
+          <article class="card tip-card">
+            <div class="tip-number">2</div>
+            <h3>床不要直沖房門</h3>
+            <p>開門就見床，氣流直衝，隱私感也差。若格局受限，可用屏風、矮櫃或床位微調來化解。</p>
+          </article>
+          <article class="card tip-card">
+            <div class="tip-number">3</div>
+            <h3>避開樑壓床</h3>
+            <p>床上方若有大樑，容易形成壓迫感，長久下來影響休息與精神。能移床最好，不能移就做天花修飾化解。</p>
+          </article>
+          <article class="card tip-card">
+            <div class="tip-number">4</div>
+            <h3>鏡子不要正對床</h3>
+            <p>鏡面容易造成驚擾與反射煞，半夜起身特別明顯。鏡子適合藏於衣櫃內側或避開睡眠視線。</p>
+          </article>
+          <article class="card tip-card">
+            <div class="tip-number">5</div>
+            <h3>色彩以柔和安定為主</h3>
+            <p>米色、淺咖、灰杏、霧藍等色調較能養氣。太鮮豔、太強烈的對比，容易讓空間躁動不安。</p>
+          </article>
+          <article class="card tip-card">
+            <div class="tip-number">6</div>
+            <h3>雜物少一點，氣就順一點</h3>
+            <p>床下堆滿雜物、角落積灰、衣物亂堆，都是阻礙氣流的元凶。臥室越乾淨，越有助於穩定氣場。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="mistakes">
+      <div class="container">
+        <h2 class="section-title">常見好格局 vs 常見地雷</h2>
+        <p class="section-subtitle">不是每間房都能完美，但至少先避開最容易踩雷的配置。</p>
+
+        <div class="compare">
+          <div class="compare-box good-box">
+            <h3 style="color: var(--good);">適合的臥室配置</h3>
+            <ul>
+              <li>床頭靠實牆，左右空間大致平衡</li>
+              <li>能看見房門，但不與房門正沖</li>
+              <li>採光柔和，可遮光也可通風</li>
+              <li>收納集中，不讓物品四散堆積</li>
+              <li>整體色調溫和，視覺乾淨</li>
+            </ul>
+          </div>
+
+          <div class="compare-box bad-box">
+            <h3 style="color: var(--warn);">常見風水地雷</h3>
+            <ul>
+              <li>床尾直對門口或走道</li>
+              <li>床頭靠窗，後方無實靠</li>
+              <li>鏡子正照床鋪</li>
+              <li>床上有樑、吊櫃或壓迫物</li>
+              <li>床下與角落塞滿雜物，氣場混亂</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2 class="section-title">臥室風水實用建議</h2>
+        <p class="section-subtitle">如果你現在就想改善，可以先從這幾件最有效的小動作開始。</p>
+
+        <div class="grid-2">
+          <article class="card">
+            <h3>今天就能做的 3 件事</h3>
+            <p>
+              1. 清空床底雜物。<br>
+              2. 把鏡子移開，不要正照床。<br>
+              3. 整理床頭周圍，避免堆放太多電器與凌亂物件。
+            </p>
+          </article>
+          <article class="card">
+            <h3>若格局無法改怎麼辦？</h3>
+            <p>
+              若因為房型、租屋或空間限制無法大改，可先透過屏風、布簾、家具微調、燈光與收納整理來修正。
+              風水不是只看大刀闊斧，有時候小調整反而最有感。
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta">
+          <h2>隨緣堂｜臥室風水整理</h2>
+          <p>
+            臥室顧得好，人才睡得穩、情緒穩、氣場也穩。
+            如果你要把這頁拿去做品牌展示、SEO內容頁、粉專導流頁，我也可以下一步直接幫你補上聯絡資訊、服務項目與預約區塊。
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 隨緣堂．臥室風水主題網站
+    </div>
+  </footer>
+</body>
+</html>
