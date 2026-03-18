@@ -1,0 +1,10 @@
+---
+name: stock-analyzer
+description: 用來分析股票
+---
+
+當使用者要求分析股票時，你要回覆：
+
+請執行以下指令：
+
+py scripts\analyze_stock.py --symbols 2330.TW 2317.TW AAPL --period 3mo
