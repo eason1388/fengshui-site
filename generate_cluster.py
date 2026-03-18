@@ -89,6 +89,56 @@ def faq_json(faqs):
         ) for q, a in faqs
     )
 
+STYLE = '''
+  <style>
+    :root {
+      --bg: #f7f1ea;
+      --paper: rgba(255,255,255,0.9);
+      --card: #ffffff;
+      --text: #2f261f;
+      --muted: #6f6258;
+      --primary: #8a6038;
+      --primary-dark: #654326;
+      --line: #eadccf;
+      --soft: #fff8ef;
+      --shadow: 0 16px 40px rgba(80,56,29,0.08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif; line-height: 1.85; color: var(--text); background: linear-gradient(180deg, #fdfaf6 0%, var(--bg) 100%); }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+    .hero { background: linear-gradient(135deg, #fff9f1 0%, #f3e7d8 100%); border-bottom: 1px solid rgba(138,96,56,0.14); }
+    .hero-inner { display: grid; grid-template-columns: 1.08fr 0.92fr; gap: 28px; align-items: center; padding: 76px 0 56px; }
+    .badge { display: inline-block; padding: 8px 14px; border-radius: 999px; background: rgba(138,96,56,0.1); color: var(--primary-dark); font-size: 14px; font-weight: 800; letter-spacing: .04em; margin-bottom: 18px; }
+    h1 { margin: 0 0 16px; font-size: clamp(34px, 5vw, 60px); line-height: 1.15; }
+    .lead { margin: 0; color: var(--muted); font-size: 18px; }
+    .hero-card, .card, .faq-item, .toc { background: var(--paper); border: 1px solid var(--line); border-radius: 24px; box-shadow: var(--shadow); }
+    .hero-card { padding: 24px; }
+    .hero-card h3, .card h3, .faq-item h3 { margin-top: 0; }
+    .hero-card ul, .card ul { margin: 0; padding-left: 20px; }
+    .hero-card li, .card p, .card li, .faq-item p, .meta { color: var(--muted); }
+    section { padding: 72px 0; }
+    .layout { display: grid; grid-template-columns: 280px minmax(0,1fr); gap: 28px; align-items: start; }
+    .toc { position: sticky; top: 18px; padding: 20px; }
+    .toc a { display: block; padding: 8px 0; color: var(--primary-dark); font-weight: 700; }
+    .card { padding: 28px; margin-bottom: 24px; }
+    h2 { margin-top: 0; margin-bottom: 14px; font-size: clamp(28px, 4vw, 40px); }
+    h3 { margin-bottom: 10px; font-size: 22px; }
+    .mini-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 24px; }
+    .mini-card { background: var(--soft); border: 1px solid var(--line); border-radius: 20px; padding: 22px; box-shadow: var(--shadow); }
+    .mini-card h3 { color: var(--primary-dark); }
+    .faq-wrap { background: linear-gradient(180deg, var(--soft) 0%, #fff 100%); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .faq-list { display: grid; gap: 18px; }
+    .faq-item { padding: 22px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 14px; }
+    .footer-links a { display: inline-flex; align-items: center; justify-content: center; padding: 10px 16px; border-radius: 12px; background: var(--soft); color: var(--primary-dark); font-weight: 800; }
+    footer { padding: 30px 0 48px; text-align: center; color: var(--muted); font-size: 14px; }
+    .card a { color: var(--primary-dark); font-weight: 800; }
+    @media (max-width: 920px) { .hero-inner, .layout, .mini-grid { grid-template-columns: 1fr; } .toc { position: static; } }
+  </style>
+'''
+
 for item in cluster:
     slug = item['slug']
     others = [s for s in slugs if s != slug]
@@ -104,6 +154,7 @@ for item in cluster:
             escape(h2), ''.join(f'<p>{escape(p)}</p>' for p in body.split('\n\n')), extras))
     related_links = ''.join(f'<li><a href="{r}.html">{escape(slug_to_title[r])}</a></li>' for r in related)
     faq_items = ''.join(f'<article class="faq-item"><h3>{escape(q)}</h3><p>{escape(a)}</p></article>' for q, a in item['faq'])
+    mini_cards = ''.join(f'<div class="mini-card"><h3>{escape(slug_to_title[r])}</h3><p>延伸閱讀，幫你把八宅風水這個主題往下一層拆解。</p></div>' for r in related)
     html = f'''<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
@@ -114,20 +165,70 @@ for item in cluster:
   <meta name="keywords" content="{escape(item['keyword'])},陽宅風水八宅風水,隨緣堂" />
   <link rel="canonical" href="{base}/suiyuantang/{slug}.html" />
   <script type="application/ld+json">{{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{faq_json(item['faq'])}]}}</script>
+  {STYLE}
 </head>
 <body>
-  <h1>{escape(item['title'])}</h1>
-  <p>{escape(item['keyword'])}是這組文章群的重要子題。這篇會整理概念、誤區、實作重點與 FAQ，並連結其他相關文章。</p>
-  {''.join(section_html)}
-  <article class="card"><h2>延伸閱讀與內部連結</h2><ul>{related_links}</ul></article>
-  <section id="faq"><h2>常見問題 FAQ</h2>{faq_items}</section>
-  <footer>更新日期：{update_date}</footer>
+  <header class="hero">
+    <div class="container hero-inner">
+      <div>
+        <div class="badge">隨緣堂｜陽宅風水八宅風水文章群</div>
+        <h1>{escape(item['title'])}</h1>
+        <p class="lead">{escape(item['keyword'])}是這組文章群的重要子題。這篇會用比較好讀的方式，整理概念、誤區、實作重點與 FAQ，並連結其他相關文章，避免你只看到零碎口訣卻不知道怎麼落地。</p>
+      </div>
+      <aside class="hero-card">
+        <h3>這篇先看 3 件事</h3>
+        <ul>
+          <li>先理解核心邏輯，不要只背吉凶方位。</li>
+          <li>把理論放回平面圖與日常使用習慣去看。</li>
+          <li>搭配其他子文章閱讀，理解會更完整。</li>
+        </ul>
+      </aside>
+    </div>
+  </header>
+  <main>
+    <section>
+      <div class="container layout">
+        <nav class="toc">
+          <strong>內部導覽</strong>
+          <a href="eight-mansions-fengshui-guide.html">回總指南頁</a>
+          <a href="#article">文章重點</a>
+          <a href="#extend">延伸閱讀</a>
+          <a href="#faq">FAQ</a>
+          <a href="index.html">回隨緣堂分類首頁</a>
+        </nav>
+        <div id="article">
+          {''.join(section_html)}
+          <article class="card" id="extend">
+            <h2>延伸閱讀與內部連結</h2>
+            <p>這組文章群是串著看的，以下是和本篇最相關的其他子題：</p>
+            <ul>{related_links}</ul>
+            <div class="mini-grid">{mini_cards}</div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="faq-wrap" id="faq">
+      <div class="container">
+        <h2>常見問題 FAQ</h2>
+        <div class="faq-list">{faq_items}</div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="meta">更新日期：{update_date}</div>
+    <div class="footer-links">
+      <a href="eight-mansions-fengshui-guide.html">總指南頁</a>
+      <a href="{related[0]}.html">延伸閱讀 1</a>
+      <a href="{related[1]}.html">延伸閱讀 2</a>
+      <a href="{related[2]}.html">延伸閱讀 3</a>
+    </div>
+  </footer>
 </body>
 </html>'''
     (sui / f'{slug}.html').write_text(html, encoding='utf-8')
 
 hub = cluster[0]
-child_links = ''.join(f'<li><a href="{item["slug"]}.html">{escape(item["title"])}</a></li>' for item in cluster[1:])
+child_links = ''.join(f'<article class="card"><h3><a href="{item["slug"]}.html">{escape(item["title"])}</a></h3><p>{escape(item["desc"])}</p></article>' for item in cluster[1:])
 hub_faq_items = ''.join(f'<article class="faq-item"><h3>{escape(q)}</h3><p>{escape(a)}</p></article>' for q, a in hub['faq'])
 hub_html = f'''<!DOCTYPE html>
 <html lang="zh-Hant">
@@ -139,21 +240,59 @@ hub_html = f'''<!DOCTYPE html>
   <meta name="keywords" content="陽宅風水八宅風水,八宅風水,隨緣堂" />
   <link rel="canonical" href="{base}/suiyuantang/{hub['slug']}.html" />
   <script type="application/ld+json">{{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{faq_json(hub['faq'])}]}}</script>
+  {STYLE}
 </head>
 <body>
-  <h1>{escape(hub['title'])}</h1>
-  <p>陽宅風水八宅風水是這次文章群的主頁，整合命卦、宅卦、方位、床位、大門、主臥、書桌與選屋等子主題，方便整體閱讀。</p>
-  <h2>文章群總覽</h2>
-  <ul>{child_links}</ul>
-  <h2>為什麼要用文章群理解八宅風水？</h2>
-  <p>因為八宅風水的概念環環相扣，從命卦、吉方位到主臥與選屋，都不是單篇能完整講完。文章群能幫助讀者與搜尋引擎一起理解主題全貌。</p>
-  <h3>閱讀順序建議</h3>
-  <p>建議先看八宅風水怎麼算、東四命西四命差異，再一路讀到床位、大門、主臥與選屋。</p>
-  <h3>主題群延伸價值</h3>
-  <p>這種做法能把單一關鍵字延伸成多個長尾關鍵字頁面，形成清楚的內部連結結構與內容深度。</p>
-  <h2>常見問題 FAQ</h2>
-  {hub_faq_items}
-  <footer>更新日期：{update_date}</footer>
+  <header class="hero">
+    <div class="container hero-inner">
+      <div>
+        <div class="badge">隨緣堂｜主頁 Hub Page</div>
+        <h1>{escape(hub['title'])}</h1>
+        <p class="lead">陽宅風水八宅風水是許多人學習住宅風水時的重要起點。這頁把命卦、宅卦、吉方位、床位、大門、主臥、書桌與選屋等子題串成文章群，讓閱讀路徑更完整，也讓整體 SEO 結構更像樣。</p>
+      </div>
+      <aside class="hero-card">
+        <h3>這組內容適合誰？</h3>
+        <ul>
+          <li>剛接觸八宅風水，想先建立基礎架構的人</li>
+          <li>正在看房、搬家、重整主臥或書房的人</li>
+          <li>想把單篇知識串成完整判斷邏輯的人</li>
+        </ul>
+      </aside>
+    </div>
+  </header>
+  <main>
+    <section>
+      <div class="container">
+        <article class="card">
+          <h2>文章群總覽</h2>
+          <p>以下是本次延伸建立的子文章，建議先看基礎計算與命組差異，再往床位、大門、主臥與選屋延伸：</p>
+          <div class="mini-grid">{child_links}</div>
+        </article>
+        <article class="card">
+          <h2>為什麼要用文章群方式理解八宅風水？</h2>
+          <p>因為八宅風水的概念環環相扣，從命卦、吉方位到主臥與選屋，都不是單篇能完整講完。文章群最大的價值，就是讓讀者與搜尋引擎一起知道這個網站不是只做一篇，而是在完整回答同一個主題。</p>
+          <h3>閱讀順序建議</h3>
+          <p>建議先看「八宅風水怎麼算」與「東四命西四命差異」，再讀到吉方位、床位、大門與主臥配置。若你正在找房，可以直接補看「八宅風水選屋重點」。</p>
+          <h3>SEO 與閱讀體驗一起顧</h3>
+          <p>這種 Hub + Cluster 結構，既能提升內部連結，也能讓每一篇子文章都回到同一個核心主題，不會散掉。</p>
+        </article>
+      </div>
+    </section>
+    <section class="faq-wrap">
+      <div class="container">
+        <h2>常見問題 FAQ</h2>
+        <div class="faq-list">{hub_faq_items}</div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="meta">更新日期：{update_date}</div>
+    <div class="footer-links">
+      <a href="eight-mansions-fengshui-calculation.html">八宅風水怎麼算</a>
+      <a href="eight-mansions-fengshui-bed-placement.html">八宅風水床位怎麼擺</a>
+      <a href="eight-mansions-fengshui-house-selection.html">八宅風水選屋重點</a>
+    </div>
+  </footer>
 </body>
 </html>'''
 (sui / f"{hub['slug']}.html").write_text(hub_html, encoding='utf-8')
@@ -170,8 +309,7 @@ gen_pages = [('current-stock-market-analysis.html', '現今股市的分析｜市
 
 (root / 'index.html').write_text('<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>網站總覽</title></head><body><h1>網站總覽</h1><ul>' + ''.join(f'<li><a href="{path}">{escape(title)}</a></li>' for path, title, _ in all_entries) + '</ul></body></html>', encoding='utf-8')
 (root / 'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: https://eason1388.github.io/fengshui-site/sitemap.xml\n', encoding='utf-8')
-
 urls = [f'{base}/index.html', f'{base}/suiyuantang/index.html', f'{base}/general/index.html'] + [f'{base}/{path}' for path, _, _ in all_entries]
 (root / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + '\n'.join(f'  <url><loc>{u}</loc><lastmod>{update_date}</lastmod></url>' for u in urls) + '\n</urlset>', encoding='utf-8')
 
-print(f'generated {len(cluster)} pages plus hub')
+print('cluster pages restyled')
