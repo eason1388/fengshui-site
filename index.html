@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>客廳風水｜隨緣堂</title>
-  <meta name="description" content="隨緣堂客廳風水網站，整理客廳納氣、財位、沙發、採光、動線與常見禁忌，打造穩定聚氣的居家空間。" />
+  <title>臥室風水主題站｜隨緣堂</title>
+  <meta name="description" content="隨緣堂臥室風水主題站，整理招財布局、床位安排與鏡子禁忌，幫你把睡眠、氣場與財氣一起穩住。" />
   <style>
     :root {
-      --bg: #f7f2ea;
-      --panel: rgba(255,255,255,0.85);
+      --bg: #f6f0ea;
+      --panel: rgba(255,255,255,0.82);
       --card: #ffffff;
-      --text: #2f261f;
-      --muted: #6f6258;
-      --primary: #8a6038;
-      --primary-dark: #654326;
-      --accent: #caa67a;
-      --line: #e9dccb;
-      --good: #49664c;
-      --warn: #a05a2b;
-      --shadow: 0 14px 36px rgba(80, 56, 29, 0.08);
+      --text: #2c2430;
+      --muted: #6a5c70;
+      --primary: #7a4f65;
+      --primary-dark: #59364a;
+      --accent: #d7b6a4;
+      --line: #eadccf;
+      --gold: #b6862d;
+      --warn: #9f4e3a;
+      --shadow: 0 16px 40px rgba(72, 44, 66, 0.1);
     }
 
     * { box-sizing: border-box; }
@@ -26,9 +26,11 @@
     body {
       margin: 0;
       font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
-      background: linear-gradient(180deg, #fbf7f1 0%, #f5ede2 100%);
       color: var(--text);
       line-height: 1.75;
+      background:
+        radial-gradient(circle at top left, rgba(215, 182, 164, 0.18), transparent 28%),
+        linear-gradient(180deg, #fdfaf7 0%, var(--bg) 100%);
     }
 
     a { color: inherit; text-decoration: none; }
@@ -39,38 +41,37 @@
     }
 
     .hero {
+      border-bottom: 1px solid rgba(122, 79, 101, 0.14);
       background:
-        radial-gradient(circle at top right, rgba(202, 166, 122, 0.18), transparent 30%),
-        linear-gradient(135deg, #fff9f1 0%, #f3e7d8 100%);
-      border-bottom: 1px solid rgba(138, 96, 56, 0.12);
-      overflow: hidden;
+        radial-gradient(circle at right top, rgba(122, 79, 101, 0.14), transparent 30%),
+        linear-gradient(135deg, #fffaf6 0%, #f2e7de 100%);
     }
 
     .hero-inner {
       min-height: 78vh;
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 36px;
       align-items: center;
-      padding: 72px 0 58px;
+      padding: 76px 0 60px;
     }
 
     .badge {
       display: inline-block;
       padding: 8px 14px;
       border-radius: 999px;
-      background: rgba(138, 96, 56, 0.1);
+      background: rgba(122, 79, 101, 0.1);
       color: var(--primary-dark);
       font-size: 14px;
-      font-weight: 700;
-      margin-bottom: 16px;
-      letter-spacing: .04em;
+      font-weight: 800;
+      letter-spacing: .05em;
+      margin-bottom: 18px;
     }
 
     h1 {
       margin: 0 0 18px;
-      font-size: clamp(34px, 5vw, 60px);
-      line-height: 1.15;
+      font-size: clamp(34px, 5vw, 62px);
+      line-height: 1.12;
     }
 
     .hero p {
@@ -91,9 +92,9 @@
       justify-content: center;
       padding: 13px 22px;
       border-radius: 14px;
-      font-weight: 700;
-      transition: .2s ease;
+      font-weight: 800;
       border: 1px solid transparent;
+      transition: .2s ease;
     }
 
     .btn-primary {
@@ -110,18 +111,18 @@
       color: var(--primary-dark);
     }
 
-    .hero-card {
+    .panel {
       background: var(--panel);
       backdrop-filter: blur(8px);
-      border: 1px solid rgba(138, 96, 56, 0.14);
-      border-radius: 24px;
-      padding: 24px;
+      border: 1px solid rgba(122, 79, 101, 0.14);
+      border-radius: 26px;
+      padding: 26px;
       box-shadow: var(--shadow);
     }
 
-    .hero-card h3 {
+    .panel h3 {
       margin-top: 0;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       font-size: 22px;
     }
 
@@ -134,10 +135,10 @@
     }
 
     .hero-list li {
-      background: #fffaf5;
-      border: 1px solid var(--line);
-      border-radius: 14px;
       padding: 14px 16px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.76);
     }
 
     section { padding: 78px 0; }
@@ -145,13 +146,13 @@
     .section-title {
       text-align: center;
       font-size: clamp(28px, 4vw, 42px);
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .section-subtitle {
       text-align: center;
       color: var(--muted);
-      max-width: 780px;
+      max-width: 800px;
       margin: 0 auto 42px;
     }
 
@@ -166,7 +167,7 @@
     .card {
       background: var(--card);
       border: 1px solid var(--line);
-      border-radius: 22px;
+      border-radius: 24px;
       padding: 24px;
       box-shadow: var(--shadow);
     }
@@ -177,98 +178,78 @@
       font-size: 22px;
     }
 
-    .card p { color: var(--muted); margin-bottom: 0; }
+    .card p, .card li { color: var(--muted); }
 
-    .tips {
-      background: linear-gradient(180deg, rgba(255,255,255,0.5), rgba(255,255,255,0.88));
-      border-top: 1px solid rgba(138, 96, 56, 0.1);
-      border-bottom: 1px solid rgba(138, 96, 56, 0.1);
+    .card ul {
+      margin: 0;
+      padding-left: 20px;
     }
 
-    .tip-card {
+    .highlight {
+      background: linear-gradient(180deg, rgba(255,255,255,0.55), rgba(255,255,255,0.9));
+      border-top: 1px solid rgba(122, 79, 101, 0.1);
+      border-bottom: 1px solid rgba(122, 79, 101, 0.1);
+    }
+
+    .topic-card {
       position: relative;
-      padding-top: 60px;
+      padding-top: 62px;
     }
 
-    .tip-number {
+    .topic-no {
       position: absolute;
       top: 22px;
       left: 24px;
-      width: 34px;
-      height: 34px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
       display: grid;
       place-items: center;
       background: var(--primary);
       color: #fff;
-      font-weight: 700;
+      font-weight: 800;
     }
 
-    .compare {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
+    .fortune {
+      background: linear-gradient(135deg, #fff9ec 0%, #f7edcf 100%);
+      border: 1px solid #ead7a8;
     }
 
-    .compare-box {
-      border-radius: 24px;
-      padding: 26px;
-      box-shadow: var(--shadow);
-    }
+    .fortune h3 { color: #88600f; }
 
-    .good-box {
-      background: #f4faf3;
-      border: 1px solid #cfe3cf;
-    }
-
-    .bad-box {
-      background: #fff6f1;
-      border: 1px solid #efd3c2;
-    }
-
-    .compare-box h3 {
-      margin-top: 0;
-      font-size: 24px;
-    }
-
-    .compare-box ul {
-      margin: 0;
-      padding-left: 20px;
+    .mirror-note {
+      border-left: 4px solid var(--warn);
+      padding-left: 16px;
+      color: var(--muted);
+      margin-top: 16px;
     }
 
     .cta {
       text-align: center;
-      background: linear-gradient(135deg, #7c5330 0%, #aa7b4e 100%);
       color: #fff;
+      background: linear-gradient(135deg, #6e435a 0%, #9a6d58 100%);
       border-radius: 28px;
-      padding: 46px 28px;
+      padding: 48px 28px;
       box-shadow: var(--shadow);
     }
 
     .cta p {
-      color: rgba(255,255,255,0.86);
-      max-width: 720px;
+      color: rgba(255,255,255,0.88);
+      max-width: 760px;
       margin: 14px auto 0;
     }
 
     footer {
       padding: 28px 0 42px;
-      color: var(--muted);
       text-align: center;
-      font-size: 14px;
-    }
-
-    .mini-note {
-      margin-top: 18px;
-      font-size: 14px;
       color: var(--muted);
+      font-size: 14px;
     }
 
     @media (max-width: 900px) {
       .hero-inner,
       .grid-3,
-      .grid-2,
-      .compare {
+      .grid-2 {
         grid-template-columns: 1fr;
       }
 
@@ -283,26 +264,25 @@
   <header class="hero">
     <div class="container hero-inner">
       <div>
-        <div class="badge">隨緣堂｜客廳風水主題站</div>
-        <h1>客廳風水穩，<br>一家氣場才穩。</h1>
+        <div class="badge">隨緣堂｜臥室風水主題站</div>
+        <h1>臥室風水穩下來，<br>睡眠、感情、財氣才不會亂跑。</h1>
         <p>
-          客廳是住宅的門面，也是納氣、聚氣、待客與家人互動的核心空間。
-          客廳若格局混亂、採光不足、主位受沖，容易影響家運、財氣與整體居住感受。
+          臥室是人每天停留最久、最容易被氣場影響的空間。
+          一間好的臥室，不只是好睡而已，還要能藏風聚氣、穩定情緒、減少壓迫感，讓人醒來不是像被命運拖行。
         </p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#tips">看布局重點</a>
-          <a class="btn btn-secondary" href="#mistakes">看常見禁忌</a>
+          <a class="btn btn-primary" href="#fortune">看招財布局</a>
+          <a class="btn btn-secondary" href="#mirror">看鏡子禁忌</a>
         </div>
       </div>
 
-      <div class="hero-card">
-        <h3>快速看懂客廳風水 3 核心</h3>
+      <div class="panel">
+        <h3>臥室風水 3 個核心觀念</h3>
         <ul class="hero-list">
-          <li><strong>納氣要順：</strong>入口到客廳動線通暢、明亮，氣才進得來也留得住。</li>
-          <li><strong>主位要穩：</strong>沙發、主座有靠，避免背門背窗與樑壓主位。</li>
-          <li><strong>財位要靜：</strong>財位乾淨、穩定、不雜亂，比你亂塞招財物還實際。</li>
+          <li><strong>氣要靜：</strong>臥室不適合太亂、太亮、太衝，休息區先求安定。</li>
+          <li><strong>床要穩：</strong>床位有靠、避開門沖與樑壓，人睡起來才比較踏實。</li>
+          <li><strong>鏡要收：</strong>鏡子擺得不對，容易干擾視覺、情緒與睡眠感受。</li>
         </ul>
-        <div class="mini-note">一句話：客廳不是拿來堆東西的倉庫，是家運的門面。氣一亂，整間屋子就跟著吵。</div>
       </div>
     </div>
   </header>
@@ -310,121 +290,107 @@
   <main>
     <section>
       <div class="container">
-        <h2 class="section-title">為什麼客廳風水會影響家運？</h2>
+        <h2 class="section-title">為什麼臥室風水特別重要？</h2>
         <p class="section-subtitle">
-          客廳是住宅的主要活動區，也是外氣進入室內後的重要聚氣點。
-          若客廳布局得宜，通常家人互動較穩、空間舒適感較高，整體居住運勢也會比較順。
+          客廳看門面，臥室看根本。你一天有很長時間在這裡休息、恢復、沉澱，
+          只要床位不穩、鏡面亂照、雜物堆積，人的狀態通常也很難真的穩。
         </p>
 
         <div class="grid-3">
           <article class="card">
-            <h3>影響納氣</h3>
-            <p>客廳連接大門與主要活動區，若空間明亮、順暢，氣場較容易流通並穩定停留。</p>
+            <h3>影響睡眠品質</h3>
+            <p>床位、光線、鏡面與樑位都會影響臥室的壓迫感與安定感，睡不好，整體運勢就先扣分。</p>
           </article>
           <article class="card">
-            <h3>影響人際</h3>
-            <p>客廳是家人交流與接待賓客的地方，空間穩定，互動氣氛通常也更和諧。</p>
+            <h3>影響情緒與關係</h3>
+            <p>臥室是伴侶與個人能量修復的地方，格局混亂、動線不順，久了連脾氣都容易跟著毛起來。</p>
           </article>
-          <article class="card">
-            <h3>影響財氣</h3>
-            <p>財位、動線、採光與收納都會影響客廳的聚氣效果，亂中無序，財也不太愛留下來。</p>
+          <article class="card fortune">
+            <h3>影響財氣留存</h3>
+            <p>臥室若能穩定藏氣、減少洩氣，對個人精神狀態與財運累積通常比較有幫助，至少不會每天散財散到像開外掛。</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="tips" class="tips">
+    <section id="fortune" class="highlight">
       <div class="container">
-        <h2 class="section-title">客廳風水 6 大布局重點</h2>
-        <p class="section-subtitle">先把大方向顧好，客廳就會從亂氣場，變成真正能聚氣的地方。</p>
+        <h2 class="section-title">招財布局</h2>
+        <p class="section-subtitle">臥室招財不是靠塞滿水晶和小金蟾，而是先把能量留住，讓人睡得穩、做事穩、錢也比較不會亂漏。</p>
 
         <div class="grid-3">
-          <article class="card tip-card">
-            <div class="tip-number">1</div>
-            <h3>客廳要明亮開闊</h3>
-            <p>客廳代表住宅的氣口與門面，採光宜充足，避免陰暗壓迫。明亮空間通常較能聚人氣與好氣。</p>
+          <article class="card topic-card">
+            <div class="topic-no">1</div>
+            <h3>財位保持清爽明亮</h3>
+            <p>臥室內可留意斜對角或較穩定的角落，保持整潔、乾淨、少雜物，才能形成較好的聚氣感。</p>
           </article>
-          <article class="card tip-card">
-            <div class="tip-number">2</div>
-            <h3>沙發背後最好有靠</h3>
-            <p>沙發為主位，背後宜靠牆，象徵有靠山。若背後空蕩、背門或背窗，容易讓主位不穩。</p>
+          <article class="card topic-card">
+            <div class="topic-no">2</div>
+            <h3>避免床下堆滿雜物</h3>
+            <p>床下塞滿行李箱、舊物與雜亂電器，容易形成壓迫與混濁氣場。要招財，先別讓床底變成小型倉庫。</p>
           </article>
-          <article class="card tip-card">
-            <div class="tip-number">3</div>
-            <h3>財位保持乾淨穩定</h3>
-            <p>明財位常位於入門斜對角，宜整潔、安靜、明亮，不適合堆雜物、垃圾桶或凌亂電線。</p>
-          </article>
-          <article class="card tip-card">
-            <div class="tip-number">4</div>
-            <h3>避免鏡子正對大門</h3>
-            <p>鏡子若直接對門，容易產生反射之象，讓入門氣場無法穩定聚集，影響整體氣勢。</p>
-          </article>
-          <article class="card tip-card">
-            <div class="tip-number">5</div>
-            <h3>動線不要被家具卡死</h3>
-            <p>客廳動線若過於狹窄、轉折過多或被大型家具堵住，容易讓氣場停滯，也讓生活感受變差。</p>
-          </article>
-          <article class="card tip-card">
-            <div class="tip-number">6</div>
-            <h3>少雜物，多整潔</h3>
-            <p>客廳若堆滿未整理的物品、箱子、雜誌與小家電，氣場會變得零碎混亂，影響居住穩定度。</p>
+          <article class="card topic-card">
+            <div class="topic-no">3</div>
+            <h3>色調溫和、氣場穩定</h3>
+            <p>臥室適合柔和穩定的色彩與燈光，減少刺眼與躁動感。人穩，判斷比較穩，財就比較留得住。</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="mistakes">
+    <section id="bed">
       <div class="container">
-        <h2 class="section-title">好客廳 vs 地雷客廳</h2>
-        <p class="section-subtitle">不是每個格局都完美，但至少先避開那些一看就知道很容易出事的配置。</p>
-
-        <div class="compare">
-          <div class="compare-box good-box">
-            <h3 style="color: var(--good);">適合的客廳配置</h3>
-            <ul>
-              <li>入門後視野清楚，空間明亮整潔</li>
-              <li>沙發背靠實牆，主位穩定</li>
-              <li>財位乾淨，有適度光線與穩定擺設</li>
-              <li>家具比例適中，動線流暢不壓迫</li>
-              <li>整體色調溫潤，氣氛和諧舒適</li>
-            </ul>
-          </div>
-
-          <div class="compare-box bad-box">
-            <h3 style="color: var(--warn);">常見客廳風水地雷</h3>
-            <ul>
-              <li>大門一開就是雜亂客廳</li>
-              <li>沙發背門、背窗或位於樑下</li>
-              <li>鏡子正對大門或主位</li>
-              <li>財位塞滿雜物或放置垃圾桶</li>
-              <li>家具過大，動線混亂卡氣</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <h2 class="section-title">客廳風水實用調整法</h2>
-        <p class="section-subtitle">如果你現在就要改善，不必先砸錢裝修，先把這幾步做起來最實際。</p>
+        <h2 class="section-title">床位安排</h2>
+        <p class="section-subtitle">床位是臥室風水的主軸。床放歪了，整個休息區就跟著亂，人在裡面怎麼睡都不太對勁。</p>
 
         <div class="grid-2">
           <article class="card">
-            <h3>今天可以先做的 3 件事</h3>
-            <p>
-              1. 清掉客廳雜物，尤其入口與財位區域。<br>
-              2. 檢查沙發主位後方是否有靠。<br>
-              3. 調整採光與燈光，讓客廳不要陰沉壓抑。
-            </p>
+            <h3>理想床位原則</h3>
+            <ul>
+              <li>床頭靠實牆，象徵有靠山，睡起來較安定。</li>
+              <li>床位避免正對房門，減少直沖感。</li>
+              <li>左右盡量保留適度通道，讓動線平衡，不要一邊卡死。</li>
+              <li>床上方避開樑壓、厚重吊櫃或視覺壓迫物。</li>
+            </ul>
           </article>
           <article class="card">
-            <h3>若格局有硬傷怎麼辦？</h3>
-            <p>
-              若遇到鏡對門、沙發背窗、動線受阻等問題，可透過屏風、邊櫃、燈光、布簾與家具重配來緩解。
-              風水很多時候不是神操作，是把亂的地方整理回秩序。
-            </p>
+            <h3>常見床位地雷</h3>
+            <ul>
+              <li>床頭靠窗，背後虛空，穩定感不足。</li>
+              <li>床尾正沖房門，容易產生不安與干擾感。</li>
+              <li>床緊貼廁所牆、機房牆或雜音來源，休息品質容易被破壞。</li>
+              <li>雙人床一側貼牆過死，伴侶互動和使用便利性都容易受影響。</li>
+            </ul>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="mirror" class="highlight">
+      <div class="container">
+        <h2 class="section-title">鏡子禁忌</h2>
+        <p class="section-subtitle">鏡子不是不能放，是不要亂放。它會放大視覺刺激，也會讓臥室的安定感被打折。</p>
+
+        <div class="grid-3">
+          <article class="card topic-card">
+            <div class="topic-no">1</div>
+            <h3>避免鏡子正對床</h3>
+            <p>人半夜醒來容易直接看到映像，視覺刺激太強，容易造成不安、淺眠或精神緊繃。</p>
+          </article>
+          <article class="card topic-card">
+            <div class="topic-no">2</div>
+            <h3>避免鏡子照房門</h3>
+            <p>鏡面直照房門，容易形成反射與洩氣之象，讓臥室較難維持穩定聚氣。</p>
+          </article>
+          <article class="card topic-card">
+            <div class="topic-no">3</div>
+            <h3>能收就收，能側放就側放</h3>
+            <p>如果空間一定要有穿衣鏡，優先考慮放在不直照床的位置，或使用櫃內鏡、布簾遮擋來降低干擾。</p>
+          </article>
+        </div>
+
+        <div class="panel mirror-note">
+          一句話版本：鏡子本身不邪門，亂照才煩。臥室要的是安定，不是半夜起床先被自己嚇一跳。
         </div>
       </div>
     </section>
@@ -432,10 +398,10 @@
     <section>
       <div class="container">
         <div class="cta">
-          <h2>隨緣堂｜客廳風水主題網站</h2>
+          <h2>隨緣堂｜臥室風水主題站</h2>
           <p>
-            客廳穩，家的氣場通常就不會太差。
-            如果你要把這頁拿去做品牌展示、導流頁、SEO內容站，我下一步可以直接幫你補上服務介紹、聯絡資訊與預約區塊。
+            這頁已整理臥室最常被問的三大重點：招財、床位、鏡子禁忌。
+            如果你要繼續做成品牌頁、SEO導流頁或加上服務介紹，我也能直接往下補。
           </p>
         </div>
       </div>
@@ -443,7 +409,7 @@
   </main>
 
   <footer>
-    <div class="container">© 2026 隨緣堂．客廳風水主題網站</div>
+    <div class="container">© 2026 隨緣堂．臥室風水主題網站</div>
   </footer>
 </body>
 </html>
