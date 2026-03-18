@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://eason1388.github.io/fengshui-site/sitemap.xml
