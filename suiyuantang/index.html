@@ -19,14 +19,16 @@
     header { padding: 72px 0 36px; text-align: center; }
     h1 { margin: 0 0 14px; font-size: clamp(32px, 5vw, 52px); }
     p { color: #6f6258; }
-    .empty {
-      background: rgba(255,255,255,0.85);
+    .grid { display: grid; gap: 20px; padding-bottom: 64px; }
+    .card {
+      background: rgba(255,255,255,0.88);
       border: 1px solid #eadccf;
       border-radius: 22px;
-      padding: 28px;
+      padding: 24px;
       box-shadow: 0 14px 36px rgba(80, 56, 29, 0.08);
-      margin-bottom: 64px;
     }
+    .card a { color: #8a6038; font-weight: 800; text-decoration: none; }
+    .meta { font-size: 14px; color: #6f6258; margin-top: 8px; }
   </style>
 </head>
 <body>
@@ -35,7 +37,13 @@
     <p>這裡收錄風水、命理、開運與空間布局相關內容。</p>
   </header>
   <main class="container">
-    <div class="empty">目前尚未建立風水分類文章，之後新增會自動列在這裡。</div>
+    <div class="grid">
+      <article class="card">
+        <a href="kitchen-fengshui.html">廚房風水完整指南｜爐灶、動線、收納與常見禁忌解析</a>
+        <p>整理廚房風水中最常見的爐灶位置、水火配置、動線收納與常見地雷，適合快速掌握廚房布局要點。</p>
+        <div class="meta">更新日期：2026-03-18｜品牌：隨緣堂</div>
+      </article>
+    </div>
   </main>
 </body>
 </html>
